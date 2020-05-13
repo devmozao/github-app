@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import App from '../App'
+import Home from '../pages/Home/Home'
 
 /* eslint-env mocha */
-describe('<App />', () => {
+describe('<Home />', () => {
   it('should render without errors', () => {
-    render(<App />)
+    render(<Home />)
   })
 })

@@ -1,7 +1,8 @@
 import React from 'react'
-import './App.css'
 
-function App () {
+import './Home.css'
+
+function Home () {
   return (
     <>
       Hello world!
@@ -9,4 +10,4 @@ function App () {
   )
 }
 
-export default App
+export default Home
