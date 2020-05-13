@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Loading from '../atomic-design/02-molecules/Loading/Loading'
+import Loading from '../atomic-design/02-molecules/loading/loading'
 
-const Home = lazy(() => import('../atomic-design/05-pages/Home/Home'))
-const NotFound = lazy(() => import('../atomic-design/05-pages/NotFound/NotFound'))
+const Home = lazy(() => import('../atomic-design/05-pages/home/home'))
+const NotFound = lazy(() => import('../atomic-design/05-pages/not-found/not-found'))
 
 const Routes = () => {
   return (
