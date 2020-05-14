@@ -1,13 +1,13 @@
 import React, { memo } from 'react'
 
-import Container from '../../01-atoms/container-center/container'
+import Centralizer from '../../01-atoms/centralizer'
 import Spinner from '../../01-atoms/spinner/spinner'
 
 const Loading = () => {
   return (
-    <Container>
+    <Centralizer.Both>
       <Spinner />
-    </Container>
+    </Centralizer.Both>
   )
 }
 
