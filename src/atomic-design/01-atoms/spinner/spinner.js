@@ -6,8 +6,8 @@ import colors from '../../00-utils/colors'
 
 const StyledSpinner = styled.svg`
   animation: rotate 1s linear infinite;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
 
   & .path {
     stroke: ${colors.primary};
