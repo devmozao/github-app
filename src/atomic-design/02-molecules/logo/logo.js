@@ -12,9 +12,9 @@ const StyledSpan = styled.span`
   padding: 1%;
 `
 
-const Logo = ({ size = '65px' }) => {
+const Logo = ({ size = '65px', textAlign = 'center' }) => {
   return (
-    <StyledLogo>
+    <StyledLogo style={{ textAlign: textAlign }}>
       <Typography.Logo size={size}>Github</Typography.Logo>
       <StyledSpan />
       <Typography.Italic size={size}>Search</Typography.Italic>
