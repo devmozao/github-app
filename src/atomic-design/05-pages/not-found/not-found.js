@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-function NotFound () {
+import TemplateNotFound from '../../04-templates/not-found/not-found'
+
+function NotFound ({ history }) {
+  console.log('h', history)
+
+  function handleRedirect () {
+    console.log('history', history)
+    history.push('/')
+  }
   return (
-    <>
-      Page Not Found!
-    </>
+    <TemplateNotFound handleRedirect={handleRedirect} />
   )
 }
 
-export default NotFound
+export default memo(NotFound)
