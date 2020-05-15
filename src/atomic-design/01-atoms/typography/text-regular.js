@@ -10,12 +10,26 @@ const StyledTextRegular = styled.span`
     src: url(${RalewayRegular}) format('woff');
   }
   font-family: RalewayRegular;
-
 `
 
-const TextRegular = ({ size = '', width = '', height = '', color = '', children }) => {
+const TextRegular = ({
+  size = '',
+  width = '',
+  height = '',
+  color = '',
+  children
+}) => {
   return (
-    <StyledTextRegular style={{ fontSize: size, width: width, height: height, color: color }}>{children}</StyledTextRegular>
+    <StyledTextRegular
+      style={{
+        fontSize: size,
+        width: width,
+        height: height,
+        color: color
+      }}
+    >
+      {children}
+    </StyledTextRegular>
   )
 }
 

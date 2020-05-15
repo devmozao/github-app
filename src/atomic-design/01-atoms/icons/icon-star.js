@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import icon from '../../../assets/icons/star.svg'
 
 const StyledIconStar = styled.img`
-
 `
 
 const IconStar = () => {
