@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 
-import Centralizer from '../../01-atoms/centralizer'
 import Spinner from '../../01-atoms/spinner/spinner'
+import Centralizer from '../../utils/centralizer/'
 
 const Loading = () => {
   return (
