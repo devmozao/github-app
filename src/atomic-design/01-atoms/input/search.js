@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
@@ -23,4 +23,4 @@ const InputSearch = () => {
   )
 }
 
-export default InputSearch
+export default memo(InputSearch)
