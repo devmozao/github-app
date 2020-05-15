@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import TemplateProfile from '../../04-templates/profile/profile'
 
-const Profile = ({ match, history }) => {
-  const { username } = match.params
-  console.log('username', username)
-
-  // const [state, setState] = useState('')
-  // const { username } = match.params
-
+const Profile = () => {
   return (
     <>
       <TemplateProfile />
