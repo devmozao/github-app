@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
@@ -12,14 +12,14 @@ const StyledButton = styled.button`
 const DefaultButton = ({
   icon = '',
   bgColor = '',
-  onSubmit,
+  onClick,
   children
 }) => {
   const Icon = icon
 
   return (
     <StyledButton
-      onSubmit={onSubmit}
+      onClick={onClick}
       style={{ backgroundColor: bgColor }}
     >
       {icon && (<Icon />)}
@@ -28,4 +28,4 @@ const DefaultButton = ({
   )
 }
 
-export default DefaultButton
+export default memo(DefaultButton)
