@@ -16,12 +16,11 @@ const StyledTextLogo = styled.span`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  /* color: */
 `
 
-const TextBold = ({ children }) => {
+const TextBold = ({ size = '', width = '', height = '', children }) => {
   return (
-    <StyledTextLogo>{children}</StyledTextLogo>
+    <StyledTextLogo style={{ fontSize: size, width: width, height: height }}>{children}</StyledTextLogo>
   )
 }
 

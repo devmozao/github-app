@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Home () {
+import TemplateHome from '../../04-templates/home/home'
+
+function Home ({ history }) {
+  function handleSearch (event) {
+    const username = event.nativeEvent.target[0].value
+    history.push(`/profile/${username}`)
+  }
+
   return (
     <>
-      Hello world!
+      <TemplateHome handleSearch={handleSearch} />
     </>
   )
 }

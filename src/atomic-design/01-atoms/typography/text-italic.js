@@ -12,9 +12,9 @@ const StyledTextItalic = styled.span`
   font-family: RalewayExtraLightItalic;
 `
 
-const TextItalic = ({ children }) => {
+const TextItalic = ({ size = '', width = '', height = '', children }) => {
   return (
-    <StyledTextItalic>{children}</StyledTextItalic>
+    <StyledTextItalic style={{ fontSize: size, width: width, height: height }}>{children}</StyledTextItalic>
   )
 }
 
