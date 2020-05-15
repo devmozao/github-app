@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
-import colors from '../../00-utils/colors'
+import colors from '../../utils/colors'
 
 const StyledSpinner = styled.svg`
   animation: rotate 1s linear infinite;
