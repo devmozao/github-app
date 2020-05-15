@@ -13,6 +13,7 @@ const colors = {
   shadow: shadow,
   font: {
     default: defaultTextColor,
+    reverse: light,
     title: primary,
     muted: dark,
     logo: defaultTextColor,
