@@ -9,15 +9,15 @@ const StyledLogo = styled.div`
 `
 
 const StyledSpan = styled.span`
-  padding: 10px;
+  padding: 1%;
 `
 
-const Logo = () => {
+const Logo = ({ size = '65px' }) => {
   return (
     <StyledLogo>
-      <Typography.Logo size='65px'>Github</Typography.Logo>
+      <Typography.Logo size={size}>Github</Typography.Logo>
       <StyledSpan />
-      <Typography.Italic size='65px'>Search</Typography.Italic>
+      <Typography.Italic size={size}>Search</Typography.Italic>
     </StyledLogo>
   )
 }
