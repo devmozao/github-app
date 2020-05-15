@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import TemplateHome from '../../04-templates/home/home'
 
@@ -15,4 +15,4 @@ function Home ({ history }) {
   )
 }
 
-export default Home
+export default memo(Home)
