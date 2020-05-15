@@ -21,11 +21,11 @@ const colors = {
   },
   button: {
     default: primary,
-    inverse: light
+    reverse: light
   },
   icon: {
     default: light,
-    inverse: primary
+    reverse: primary
   }
 }
 
