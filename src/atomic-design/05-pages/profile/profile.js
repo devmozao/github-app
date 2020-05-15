@@ -1,24 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-import Typography from '../../01-atoms/typography'
+import TemplateProfile from '../../04-templates/profile/profile'
 
-const { Bold, Italic, Regular, Muted, Light, Logo } = Typography
+const Profile = ({ match, history }) => {
+  const { username } = match.params
+  console.log('username', username)
 
-const Profile = () => {
+  // const [state, setState] = useState('')
+  // const { username } = match.params
+
   return (
     <>
-      <Bold size={75}>Bold</Bold>
-      <br />
-      <Italic size={75}>Italic</Italic>
-      <br />
-      <Regular size={75}>Regular</Regular>
-      <br />
-      <Muted size={75}>Muted</Muted>
-      <br />
-      <Light size={75}>Light</Light>
-      <br />
-      <Logo size={75}>Logo</Logo>
-      <br />
+      <TemplateProfile />
     </>
   )
 }
