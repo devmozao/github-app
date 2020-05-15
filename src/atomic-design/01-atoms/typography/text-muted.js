@@ -3,6 +3,7 @@ import React, { memo } from 'react'
 import styled from 'styled-components'
 
 import RalewayRegular from '../../../assets/fonts/Raleway-Regular.woff'
+import colors from '../../utils/colors'
 
 const StyledTextMuted = styled.span`
   @font-face {
@@ -10,12 +11,27 @@ const StyledTextMuted = styled.span`
     src: url(${RalewayRegular}) format('woff');
   }
   font-family: RalewayRegular;
-  color: #5c5c5c;
+  color: ${colors.font.muted};
 `
 
-const TextMuted = ({ children }) => {
+const TextMuted = ({
+  size = '',
+  width = '',
+  height = '',
+  color = '',
+  children
+}) => {
   return (
-    <StyledTextMuted>{children}</StyledTextMuted>
+    <StyledTextMuted
+      style={{
+        fontSize: size,
+        width: width,
+        height: height,
+        color: color
+      }}
+    >
+      {children}
+    </StyledTextMuted>
   )
 }
 

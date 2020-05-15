@@ -16,12 +16,26 @@ const StyledTextBold = styled.span`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  /* color: */
 `
 
-const TextBold = ({ children }) => {
+const TextBold = ({
+  size = '',
+  width = '',
+  height = '',
+  color = '',
+  children
+}) => {
   return (
-    <StyledTextBold>{children}</StyledTextBold>
+    <StyledTextBold
+      style={{
+        fontSize: size,
+        width: width,
+        height: height,
+        color: color
+      }}
+    >
+      {children}
+    </StyledTextBold>
   )
 }
 

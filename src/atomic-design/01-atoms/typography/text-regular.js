@@ -13,9 +13,9 @@ const StyledTextRegular = styled.span`
 
 `
 
-const TextRegular = ({ children }) => {
+const TextRegular = ({ size = '', width = '', height = '', color = '', children }) => {
   return (
-    <StyledTextRegular>{children}</StyledTextRegular>
+    <StyledTextRegular style={{ fontSize: size, width: width, height: height, color: color }}>{children}</StyledTextRegular>
   )
 }
 

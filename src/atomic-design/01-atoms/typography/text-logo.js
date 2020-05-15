@@ -18,9 +18,24 @@ const StyledTextLogo = styled.span`
   letter-spacing: normal;
 `
 
-const TextBold = ({ size = '', width = '', height = '', children }) => {
+const TextBold = ({
+  size = '',
+  width = '',
+  height = '',
+  color = '',
+  children
+}) => {
   return (
-    <StyledTextLogo style={{ fontSize: size, width: width, height: height }}>{children}</StyledTextLogo>
+    <StyledTextLogo
+      style={{
+        fontSize: size,
+        width: width,
+        height: height,
+        color: color
+      }}
+    >
+      {children}
+    </StyledTextLogo>
   )
 }
 

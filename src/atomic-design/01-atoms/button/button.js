@@ -12,12 +12,16 @@ const StyledButton = styled.button`
 const DefaultButton = ({
   icon = '',
   bgColor = '',
+  onSubmit,
   children
 }) => {
   const Icon = icon
 
   return (
-    <StyledButton style={{ backgroundColor: bgColor }}>
+    <StyledButton
+      onSubmit={onSubmit}
+      style={{ backgroundColor: bgColor }}
+    >
       {icon && (<Icon />)}
       {children}
     </StyledButton>

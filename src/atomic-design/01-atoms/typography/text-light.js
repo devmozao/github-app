@@ -12,9 +12,24 @@ const StyledTextLight = styled.span`
   font-family: RalewayLight;
 `
 
-const TextLight = ({ children }) => {
+const TextLight = ({
+  size = '',
+  width = '',
+  height = '',
+  color = '',
+  children
+}) => {
   return (
-    <StyledTextLight>{children}</StyledTextLight>
+    <StyledTextLight
+      style={{
+        fontSize: size,
+        width: width,
+        height: height,
+        color: color
+      }}
+    >
+      {children}
+    </StyledTextLight>
   )
 }
 
