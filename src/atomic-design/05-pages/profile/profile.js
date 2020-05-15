@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import TemplateProfile from '../../04-templates/profile/profile'
 
 const Profile = () => {
   return (
-    <>
-      <TemplateProfile />
-    </>
+    <TemplateProfile />
   )
 }
 
-export default Profile
+export default memo(Profile)
