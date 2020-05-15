@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
@@ -8,14 +8,18 @@ const StyledLogo = styled.div`
   text-align: center
 `
 
+const StyledSpan = styled.span`
+  padding: 10px;
+`
+
 const Logo = () => {
   return (
     <StyledLogo>
       <Typography.Logo size='65px'>Github</Typography.Logo>
-      <span style={{ padding: '10px' }} />
+      <StyledSpan />
       <Typography.Italic size='65px'>Search</Typography.Italic>
     </StyledLogo>
   )
 }
 
-export default Logo
+export default memo(Logo)
