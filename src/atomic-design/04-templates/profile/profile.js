@@ -1,74 +1,36 @@
-import React from 'react'
+import React, { memo } from 'react'
 
+import styled from 'styled-components'
 import { Container, Row, Col } from 'styled-bootstrap-grid'
 
-import Typography from '../../01-atoms/typography'
-import Icons from '../../01-atoms/icons'
+import ProfileSearchbar from '../../03-organisms/profile-searchbar/profile-searchbar'
+import Profile from '../../03-organisms/profile/profile'
+import Repositories from '../../03-organisms/repositories/repositories'
 
-const { Bold, Italic, Regular, Muted, Light, Logo } = Typography
-const { Follower, Localization, Organization, Repository, Search, Star } = Icons
+const StyledProfileSearchBar = styled.header`
+  padding-top: 35px;
+  padding-bottom: 50px;
+`
 
-const TemplateProfile = ({ match, history }) => {
+const TemplateProfile = ({ history }) => {
   return (
-    <>
-      <Container>
-        <br />
+    <Container>
+      <StyledProfileSearchBar>
         <Row>
-          <Col col={12}>
-            <span>Texto <input /><button>Send</button></span>
-          </Col>
+          <ProfileSearchbar />
         </Row>
-        <br />
+      </StyledProfileSearchBar>
 
-        <Row>
-          <Bold size={75}>Bold</Bold>
-          <br />
-        </Row>
-        <Row>
-          <Col>
-            <Italic size={75}>Italic</Italic>
-            <br />
-            <Regular size={75}>Regular</Regular>
-            <br />
-          </Col>
-          <Col>
-            <Muted size={75}>Muted</Muted>
-            <br />
-            <Light size={75}>Light</Light>
-            <br />
-            <Logo size={75}>Logo</Logo>
-            <br />
-          </Col>
-        </Row>
-        <Row>
-          <Col col={1}>
-            <Follower />
-            <br />
-          </Col>
-          <Col col={1}>
-            <Localization />
-            <br />
-          </Col>
-          <Col col={1}>
-            <Organization />
-            <br />
-          </Col>
-          <Col col={1}>
-            <Repository />
-            <br />
-          </Col>
-          <Col col={1}>
-            <Search />
-            <br />
-          </Col>
-          <Col col={1}>
-            <Star />
-            <br />
-          </Col>
-        </Row>
-      </Container>
-    </>
+      <Row>
+        <Col col={4}>
+          <Profile />
+        </Col>
+        <Col col={8}>
+          <Repositories />
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
-export default TemplateProfile
+export default memo(TemplateProfile)
