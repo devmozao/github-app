@@ -8,16 +8,29 @@ import Info from '../../02-molecules/info/info'
 const StyledProfile = styled.aside`
 `
 
-const Profile = () => {
+const Profile = ({
+  photoSrc = '',
+  userName = '--',
+  userLogin = '--',
+  organization = '--',
+  localization = '--',
+  stars = '--',
+  repositories = '--',
+  followers = '--'
+}) => {
   return (
     <StyledProfile>
       <User
-        photoSrc='https://avatars1.githubusercontent.com/u/15485768?v=4'
-        userName='Diogo Fonseca'
-        userLogin='devMozao'
+        photoSrc={photoSrc}
+        userName={userName}
+        userLogin={userLogin}
       />
       <Info
-
+        organization={organization}
+        localization={localization}
+        stars={stars}
+        repositories={repositories}
+        followers={followers}
       />
     </StyledProfile>
 

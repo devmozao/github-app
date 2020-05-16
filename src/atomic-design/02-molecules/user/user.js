@@ -31,7 +31,7 @@ const User = ({ photoSrc = '', userName = '', userLogin = '' }) => {
       />
       <StyledInfo>
         <StyledUserName>
-          <Typography.Regular size='35px'>{userName}</Typography.Regular>
+          <Typography.Light size='35px' children={userName} />
         </StyledUserName>
         <StyledUserLogin>
           <Typography.Muted size='20px'>{userLogin}</Typography.Muted>

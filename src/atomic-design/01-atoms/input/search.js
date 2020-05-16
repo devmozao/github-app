@@ -15,6 +15,7 @@ const StyledInput = styled.input`
   line-height: normal;
   letter-spacing: normal;
   color: ${colors.font.muted};
+  padding: 15px;
 `
 
 const InputSearch = () => {
