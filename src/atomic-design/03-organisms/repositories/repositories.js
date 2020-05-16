@@ -1,14 +1,28 @@
 import React, { memo } from 'react'
 
-// import { Col } from 'styled-bootstrap-grid'
+import Repository from '../../02-molecules/repository/repository'
 
-// import Logo from '../../02-molecules/logo/logo'
-// import Search from '../../02-molecules/search/search'
-
-const Repositories = ({ children }) => {
+const Repositories = ({ repositories = [] }) => {
   return (
     <>
-      {children}
+      {repositories.map((item, index) => {
+        const {
+          repositoryName,
+          repositoryLink,
+          description,
+          stars
+        } = item
+
+        return (
+          <Repository
+            key={index}
+            repositoryName={repositoryName}
+            repositoryLink={repositoryLink}
+            description={description}
+            stars={stars}
+          />
+        )
+      })}
     </>
   )
 }

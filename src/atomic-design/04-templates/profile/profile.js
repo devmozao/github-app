@@ -12,7 +12,7 @@ const StyledProfileSearchBar = styled.header`
   padding-bottom: 50px;
 `
 
-const TemplateProfile = ({ history }) => {
+const TemplateProfile = ({ repositories = [] }) => {
   return (
     <Container>
       <StyledProfileSearchBar>
@@ -26,7 +26,9 @@ const TemplateProfile = ({ history }) => {
           <Profile />
         </Col>
         <Col col={8}>
-          <Repositories />
+          <Repositories
+            repositories={repositories}
+          />
         </Col>
       </Row>
     </Container>
