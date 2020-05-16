@@ -18,6 +18,10 @@ const StyledRepoName = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 const StyledDescription = styled.div`
   padding-top: 2px;
@@ -27,6 +31,9 @@ const StyledDescription = styled.div`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 const StyledStars = styled.span`
   padding-top: 12px;
