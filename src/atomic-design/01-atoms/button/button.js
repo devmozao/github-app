@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
-import ColorLuminance from '../../utils/colorLuminance'
+import ColorLuminance from '../../utils/color-luminance'
 
 const StyledButton = styled.button`
   width: 100px;
