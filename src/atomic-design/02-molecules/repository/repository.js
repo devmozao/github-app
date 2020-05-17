@@ -72,6 +72,7 @@ const Repository = ({
           href={repositoryLink}
           target='_blank'
           rel='noopener noreferrer'
+          title={repositoryName}
         >
           <Typography.Regular
             color={colors.font.title}
@@ -80,7 +81,7 @@ const Repository = ({
         </StyledLink>
       </StyledRepoName>
 
-      <StyledDescription>
+      <StyledDescription title={description}>
         <Typography.Regular children={description} />
       </StyledDescription>
 

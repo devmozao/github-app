@@ -17,6 +17,9 @@ const StyledInfo = styled.div`
 `
 const StyledUserName = styled.div`
   max-height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 const StyledUserLogin = styled.div`
   max-height: 25px;
@@ -28,9 +31,10 @@ const User = ({ photoSrc = '', userName = '', userLogin = '' }) => {
     <StyledUser>
       <Photo
         src={photoSrc}
+        alt={userName}
       />
       <StyledInfo>
-        <StyledUserName>
+        <StyledUserName title={userName}>
           <Typography.Light size='35px' children={userName} />
         </StyledUserName>
         <StyledUserLogin>
