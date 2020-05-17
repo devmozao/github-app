@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
   justify-content: center;
 `
 
-const NotificationMessage = ({ children, history, handleRedirect }) => {
+const NotificationMessage = ({ children, history, handleRedirect, showRedirect }) => {
   return (
     <StyledTitle>
       <Typography.Regular
@@ -28,22 +28,25 @@ const NotificationMessage = ({ children, history, handleRedirect }) => {
       >
         {children}
       </Typography.Regular>
-      <br />
-      <br />
 
-      <StyledDiv>
-        <Button.Default
-          bgColor={colors.button.default}
-          onClick={handleRedirect}
-        >
-          <Typography.Italic
-            size='20px'
-            color={colors.font.reverse}
+      {showRedirect && (
+        <StyledDiv>
+          <br />
+          <br />
+          <Button.Default
+            bgColor={colors.button.default}
+            onClick={handleRedirect}
           >
-            Home
-          </Typography.Italic>
-        </Button.Default>
-      </StyledDiv>
+            <Typography.Italic
+              size='20px'
+              color={colors.font.reverse}
+            >
+              Home
+            </Typography.Italic>
+          </Button.Default>
+        </StyledDiv>
+      )}
+
     </StyledTitle>
   )
 }

@@ -7,6 +7,8 @@ import { Choose } from 'react-extras'
 import ProfileSearchbar from '../../03-organisms/profile-searchbar/profile-searchbar'
 import Profile from '../../03-organisms/profile/profile'
 import Repositories from '../../03-organisms/repositories/repositories'
+import ErrorMessage from '../../03-organisms/error-message/error-message'
+import Centralizer from '../../utils/centralizer'
 
 const StyledProfileSearchBar = styled.header`
   padding-top: 35px;
@@ -29,6 +31,8 @@ const TemplateProfile = ({
     followers
   } = userInfo
 
+  const shouldRenderContent = Object.entries(userInfo).length > 0 && repositories.length > 0
+
   return (
     <Container>
       <StyledProfileSearchBar>
@@ -39,7 +43,7 @@ const TemplateProfile = ({
 
       <Row>
         <Choose>
-          <Choose.When condition={Object.entries(userInfo).length > 0}>
+          <Choose.When condition={shouldRenderContent}>
             <Col col={4}>
               <Profile
                 photoSrc={photoSrc}
@@ -52,9 +56,7 @@ const TemplateProfile = ({
                 followers={followers}
               />
             </Col>
-          </Choose.When>
 
-          <Choose.When condition={repositories.length > 0}>
             <Col col={8}>
               <Repositories
                 repositories={repositories}
@@ -63,12 +65,16 @@ const TemplateProfile = ({
           </Choose.When>
 
           <Choose.Otherwise>
-            <p>Something went wrong</p>
+            <Centralizer.Both>
+              <ErrorMessage showRedirect={false}>
+                Something went wrong. :(
+              </ErrorMessage>
+            </Centralizer.Both>
           </Choose.Otherwise>
         </Choose>
       </Row>
 
-    </Container >
+    </Container>
   )
 }
 

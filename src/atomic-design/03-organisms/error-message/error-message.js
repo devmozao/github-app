@@ -7,11 +7,14 @@ import NotificationMessage from '../../02-molecules/notification-message/notific
 const StyledErrorMessage = styled.main`
 `
 
-const ErrorMessage = ({ handleRedirect }) => {
+const ErrorMessage = ({ handleRedirect, showRedirect, children }) => {
   return (
     <StyledErrorMessage>
-      <NotificationMessage handleRedirect={handleRedirect}>
-        Page not found :(
+      <NotificationMessage
+        handleRedirect={handleRedirect}
+        showRedirect={showRedirect}
+      >
+        {children}
       </NotificationMessage>
     </StyledErrorMessage>
   )

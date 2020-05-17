@@ -12,7 +12,12 @@ const TemplateNotFound = ({ handleRedirect }) => {
   return (
     <StyledTemplateNotFound>
       <Centralizer.Both>
-        <ErrorMessage handleRedirect={handleRedirect} />
+        <ErrorMessage
+          handleRedirect={handleRedirect}
+          showRedirect
+        >
+          Something went wrong. Please try again.
+        </ErrorMessage>
       </Centralizer.Both>
     </StyledTemplateNotFound>
   )
