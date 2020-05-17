@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 import { Container, Row, Col } from 'styled-bootstrap-grid'
+import { Choose } from 'react-extras'
 
 import ProfileSearchbar from '../../03-organisms/profile-searchbar/profile-searchbar'
 import Profile from '../../03-organisms/profile/profile'
@@ -37,31 +38,37 @@ const TemplateProfile = ({
       </StyledProfileSearchBar>
 
       <Row>
-        {Object.entries(userInfo).length > 0 && (
-          <Col col={4}>
-            <Profile
-              photoSrc={photoSrc}
-              userName={userName}
-              userLogin={userLogin}
-              organization={organization}
-              localization={localization}
-              stars={userStars}
-              repositories={repos}
-              followers={followers}
-            />
-          </Col>
-        )}
-        {repositories.length > 0 && (
-          <Col col={8}>
-            <Repositories
-              repositories={repositories}
-            />
-          </Col>
-        )}
+        <Choose>
+          <Choose.When condition={Object.entries(userInfo).length > 0}>
+            <Col col={4}>
+              <Profile
+                photoSrc={photoSrc}
+                userName={userName}
+                userLogin={userLogin}
+                organization={organization}
+                localization={localization}
+                stars={userStars}
+                repositories={repos}
+                followers={followers}
+              />
+            </Col>
+          </Choose.When>
 
+          <Choose.When condition={repositories.length > 0}>
+            <Col col={8}>
+              <Repositories
+                repositories={repositories}
+              />
+            </Col>
+          </Choose.When>
+
+          <Choose.Otherwise>
+            <p>Something went wrong</p>
+          </Choose.Otherwise>
+        </Choose>
       </Row>
 
-    </Container>
+    </Container >
   )
 }
 
