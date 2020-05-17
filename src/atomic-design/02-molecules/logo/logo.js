@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import Typography from '../../01-atoms/typography'
 
 const StyledLogo = styled.div`
-  text-align: center
+  text-align: center;
+  user-select: none;
 `
 
 const StyledSpan = styled.span`
