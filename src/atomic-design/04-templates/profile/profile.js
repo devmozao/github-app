@@ -12,25 +12,55 @@ const StyledProfileSearchBar = styled.header`
   padding-bottom: 50px;
 `
 
-const TemplateProfile = ({ repositories = [] }) => {
+const TemplateProfile = ({
+  userInfo = {},
+  userStars = '',
+  repositories = [],
+  history
+}) => {
+  const {
+    photoSrc,
+    userName,
+    userLogin,
+    organization,
+    localization,
+    repos,
+    followers
+  } = userInfo
+
   return (
     <Container>
       <StyledProfileSearchBar>
         <Row>
-          <ProfileSearchbar />
+          <ProfileSearchbar history={history} />
         </Row>
       </StyledProfileSearchBar>
 
       <Row>
-        <Col col={4}>
-          <Profile />
-        </Col>
-        <Col col={8}>
-          <Repositories
-            repositories={repositories}
-          />
-        </Col>
+        {Object.entries(userInfo).length > 0 && (
+          <Col col={4}>
+            <Profile
+              photoSrc={photoSrc}
+              userName={userName}
+              userLogin={userLogin}
+              organization={organization}
+              localization={localization}
+              stars={userStars}
+              repositories={repos}
+              followers={followers}
+            />
+          </Col>
+        )}
+        {repositories.length > 0 && (
+          <Col col={8}>
+            <Repositories
+              repositories={repositories}
+            />
+          </Col>
+        )}
+
       </Row>
+
     </Container>
   )
 }
