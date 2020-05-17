@@ -9,6 +9,21 @@ As a conclusion of this project, I would only recommend Styled Components + Atom
 
 Hope that someone enjoy this project as I did and can be of some sort of help. Even with the pitfall of time spent, I did a heavy effort on this and enjoyed the end result.
 
+## Website
+
+This site is hosted both in Heroku and Netlify. To check them, just use the link below.
+(someday I'll learn github pages, but today, is not this day)
+
+`As a reminder, Heroku uses the most recent and stable version of NodeJS, that is on this day, v13. Netlify on other hand, uses a LTS NodeJS v10.`
+
+My motivation to do two releases, is because Heroku shutdown the webserver after inactivity of 30 minutes. Netlify in other hand, serves the page from a dedicated CDN, but unfortunately uses an outdated LTS version from NodeJS. (currently LTS is v12). I love Heroku, but the shutdown on the server is just sad. =(
+
+**That said, here it is both links:**
+
+Heroku version: [devmozao-github-app.herokuapp.com](https://devmozao-github-app.herokuapp.com "Heroku build using NodeJS v13")
+
+Netlify version: [devmozao-github-app.netlify.app](https://devmozao-github-app.netlify.app "Netlify build using NodeJS LTS v10")
+
 ## Project Installation
 
 In order to run the project, you must have installed in your local machine:
@@ -23,8 +38,6 @@ In order to run the project, you must have installed in your local machine:
 - run `yarn` to install dependencies
 - run `yarn start` to run the webserver development
 - to see the tests, just run `yarn test`
-
-
 
 ## Technologies used on this project
 
