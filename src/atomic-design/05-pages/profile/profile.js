@@ -17,7 +17,7 @@ const Profile = ({ match, history }) => {
     }
   }, [username])
 
-  async function getAccountInfo ({ username }) {
+  async function getAccountInfo({ username }) {
     try {
       const response = await request(api.getUserFromGithub(username))
       const {
@@ -45,7 +45,7 @@ const Profile = ({ match, history }) => {
     }
   }
 
-  async function getRepositories ({ username }) {
+  async function getRepositories({ username }) {
     try {
       const response = await request(api.getRepositoriesFromUser(username))
       const formattedResponse = []
@@ -69,12 +69,20 @@ const Profile = ({ match, history }) => {
     }
   }
 
+  function handleSearch(event) {
+    event.preventDefault()
+    const username = event.nativeEvent.target[0].value
+    console.log('u', username)
+    setUsername(username)
+  }
+
   return (
     <TemplateProfile
       userInfo={userInfo}
       userStars={userStars}
       repositories={repositories}
       history={history}
+      handleSearch={handleSearch}
     />
   )
 }

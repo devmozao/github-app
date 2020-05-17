@@ -19,7 +19,8 @@ const TemplateProfile = ({
   userInfo = {},
   userStars = '',
   repositories = [],
-  history
+  history,
+  handleSearch
 }) => {
   const {
     photoSrc,
@@ -37,7 +38,7 @@ const TemplateProfile = ({
     <Container>
       <StyledProfileSearchBar>
         <Row>
-          <ProfileSearchbar history={history} />
+          <ProfileSearchbar history={history} handleSearch={handleSearch} />
         </Row>
       </StyledProfileSearchBar>
 

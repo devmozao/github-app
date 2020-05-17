@@ -10,7 +10,7 @@ const StyledLink = styled.a`
   cursor: pointer;
 `
 
-const ProfileSearchbar = ({ history }) => {
+const ProfileSearchbar = ({ history, handleSearch }) => {
   function handleRedirect () {
     history.push('/')
   }
@@ -23,7 +23,9 @@ const ProfileSearchbar = ({ history }) => {
         </StyledLink>
       </Col>
       <Col col={8}>
-        <Search />
+        <form action='#' method='search' onSubmit={handleSearch}>
+          <Search />
+        </form>
       </Col>
     </>
   )
