@@ -1,5 +1,18 @@
 import React, { Component, memo } from 'react'
 
+import styled from 'styled-components'
+
+import Centralizer from '../utils/centralizer'
+import Typography from '../01-atoms/typography'
+import colors from '../utils/colors'
+
+const StyledTitle = styled.h1`
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+`
 class ErrorBoundary extends Component {
   constructor (props) {
     super(props)
@@ -18,8 +31,18 @@ class ErrorBoundary extends Component {
 
   render () {
     if (this.state.hasError) {
-      // Você pode renderizar qualquer UI alternativa
-      return <h1>Algo deu errado.</h1>
+      return (
+        <Centralizer.Both>
+          <StyledTitle>
+            <Typography.Regular
+              size='40px'
+              color={colors.font.title}
+            >
+              Something went wrong. Try again later.
+            </Typography.Regular>
+          </StyledTitle>
+        </Centralizer.Both>
+      )
     }
 
     return this.props.children
