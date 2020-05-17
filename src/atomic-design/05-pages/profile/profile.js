@@ -62,6 +62,8 @@ const Profile = ({ match, history }) => {
         })
       })
 
+      formattedResponse.sort((a, b) => b.stars - a.stars)
+
       setRepositories(formattedResponse)
       setUserStars(countRepoStars)
     } catch (error) {
