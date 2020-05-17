@@ -7,6 +7,11 @@
     "npm": "6.x",
     "yarn": "1.x"
   },
+  "buildpacks": [
+    {
+      "url": "mars/create-react-app"
+    }
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
