@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import Home from '../atomic-design/05-pages/home/home'
+import Home from '..//pages/home/home'
 
 /* eslint-env mocha */
 describe('<Home />', () => {
