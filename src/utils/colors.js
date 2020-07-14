@@ -2,7 +2,7 @@ const defaultTextColor = '#000000'
 const primary = '#ac54f2'
 const secondary = '#99f253'
 const dark = '#5c5c5c'
-const light = '#ffffff'
+const light = '#E5CCFF'
 const shadow = 'rgba(0, 0, 0, 0.4)'
 
 const colors = {

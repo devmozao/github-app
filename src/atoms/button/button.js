@@ -11,6 +11,9 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+  img {
+    user-drag: none;
+  }
 `
 const DefaultButton = ({
   icon = '',

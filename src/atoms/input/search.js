@@ -7,6 +7,8 @@ import colors from '../../utils/colors'
 const StyledInput = styled.input`
   width: 650px;
   height: 50px;
+  padding: 0 15px;
+  border: 1px solid black;
   font-family: Raleway;
   font-size: 20px;
   font-weight: 300;
@@ -15,7 +17,6 @@ const StyledInput = styled.input`
   line-height: normal;
   letter-spacing: normal;
   color: ${colors.font.muted};
-  padding: 15px;
 `
 
 const InputSearch = () => {

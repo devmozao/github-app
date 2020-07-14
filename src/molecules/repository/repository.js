@@ -2,13 +2,15 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
+import colors from '../../utils/colors'
+
 import Icons from '../../atoms/icons'
 import Typography from '../../atoms/typography'
-import colors from '../../utils/colors'
 
 const StyledRepository = styled.div`
   width: 750px;
   padding-left: 5px;
+  background-color: ${colors.light}
 `
 const StyledRepoName = styled.div`
   height: 40px;
