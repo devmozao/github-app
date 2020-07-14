@@ -1,14 +1,20 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 
-// import { BaseCSS } from 'styled-bootstrap-grid'
+import { Reset } from 'styled-reset'
 
 import Routes from './routes/Routes'
 
+import { Container, BackgroundWrapper } from './utils/container/container'
+
 ReactDOM.render(
   <StrictMode>
-    {/* <BaseCSS /> */}
-    <Routes />
+    <Reset />
+    <BackgroundWrapper>
+      <Container>
+        <Routes />
+      </Container>
+    </BackgroundWrapper>
   </StrictMode>,
   document.getElementById('root')
 )

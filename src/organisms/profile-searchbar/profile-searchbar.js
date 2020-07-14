@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 
-import { Col } from 'styled-bootstrap-grid'
 import styled from 'styled-components'
 
 import Logo from '../../molecules/logo/logo'
@@ -17,16 +16,12 @@ const ProfileSearchbar = ({ history, handleSearch }) => {
 
   return (
     <>
-      <Col col={4}>
-        <StyledLink onClick={handleRedirect}>
-          <Logo size='40px' textAlign='start' />
-        </StyledLink>
-      </Col>
-      <Col col={8}>
-        <form action='#' method='search' onSubmit={handleSearch}>
-          <Search />
-        </form>
-      </Col>
+      <StyledLink onClick={handleRedirect}>
+        <Logo size='40px' textAlign='start' />
+      </StyledLink>
+      <form action='#' method='search' onSubmit={handleSearch}>
+        <Search />
+      </form>
     </>
   )
 }
