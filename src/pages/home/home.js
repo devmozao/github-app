@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import TemplateHome from '../../templates/home/home'
+import TemplateHome from '../../organisms/searchbar/searchbar'
 
 function Home ({ history }) {
   function handleSearch (event) {
