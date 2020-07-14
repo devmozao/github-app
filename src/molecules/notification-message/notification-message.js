@@ -14,6 +14,7 @@ const StyledTitle = styled.h1`
   letter-spacing: normal;
 `
 const StyledDiv = styled.div`
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,8 +32,6 @@ const NotificationMessage = ({ children, history, handleRedirect, showRedirect }
 
       {showRedirect && (
         <StyledDiv>
-          <br />
-          <br />
           <Button.Default
             bgColor={colors.button.default}
             onClick={handleRedirect}
