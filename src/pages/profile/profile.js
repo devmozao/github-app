@@ -1,8 +1,18 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import TemplateProfile from '../../templates/profile/profile'
+import styled from 'styled-components'
+
+import ProfileSearchbar from '../../organisms/profile-searchbar/profile-searchbar'
+import ProfileInfo from '../../organisms/profile/profile'
+import Repositories from '../../organisms/repositories/repositories'
+import ErrorMessage from '../../organisms/error-message/error-message'
 
 import * as api from '../../services/api'
+
+const StyledProfileSearchBar = styled.header`
+  padding-top: 35px;
+  padding-bottom: 50px;
+`
 
 const Profile = ({ match, history }) => {
   const [username, setUsername] = useState(match.params.username)
@@ -87,15 +97,51 @@ const Profile = ({ match, history }) => {
     setUsername(username)
   }
 
+  function shouldRenderContent(userData = {}, repositoryData = []) {
+    if (userData && repositoryData) {
+      const {
+        photoSrc,
+        userName,
+        userLogin,
+        organization,
+        localization,
+        repos,
+        followers
+      } = userData
+
+      return (
+        <>
+          <ProfileInfo
+            photoSrc={photoSrc}
+            userName={userName}
+            userLogin={userLogin}
+            organization={organization}
+            localization={localization}
+            stars={userStars}
+            repositories={repos}
+            followers={followers}
+          />
+
+          <Repositories
+            repositories={repositories}
+          />
+        </>
+      )
+    } else {
+      return (
+        <ErrorMessage showRedirect={false}>
+          Something went wrong. :(
+        </ErrorMessage>
+      )
+    }
+  }
+
   return (
     <>
-      <TemplateProfile
-        userInfo={userInfo}
-        userStars={userStars}
-        repositories={repositories}
-        history={history}
-        handleSearch={handleSearch}
-      />
+      <StyledProfileSearchBar>
+        <ProfileSearchbar history={history} handleSearch={handleSearch} />
+      </StyledProfileSearchBar>
+      {shouldRenderContent(userInfo, repositories)}
     </>
   )
 }
