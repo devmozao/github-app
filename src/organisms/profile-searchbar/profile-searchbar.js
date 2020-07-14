@@ -10,7 +10,7 @@ const StyledLink = styled.a`
 `
 
 const ProfileSearchbar = ({ history, handleSearch }) => {
-  function handleRedirect() {
+  function handleRedirect () {
     history.push('/')
   }
 
