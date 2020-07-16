@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import TemplateHome from '../../organisms/searchbar/searchbar'
+import Searchbar from '../../containers/searchbar/searchbar'
 
 function Home ({ history }) {
   function handleSearch (event) {
@@ -10,7 +10,7 @@ function Home ({ history }) {
   }
 
   return (
-    <TemplateHome handleSearch={handleSearch} />
+    <Searchbar handleSearch={handleSearch} />
   )
 }
 
