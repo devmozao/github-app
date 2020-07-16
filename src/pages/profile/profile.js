@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import ProfileSearchbar from '../../organisms/profile-searchbar/profile-searchbar'
 import ProfileInfo from '../../organisms/profile/profile'
 import Repositories from '../../organisms/repositories/repositories'
-import ErrorMessage from '../../organisms/error-message/error-message'
+import ErrorMessage from '../../molecules/notification-message/notification-message'
 
 import * as api from '../../services/api'
 
@@ -27,7 +27,7 @@ const Profile = ({ match, history }) => {
     }
   }, [username])
 
-  async function getAccountInfo({ username }) {
+  async function getAccountInfo ({ username }) {
     try {
       const response = await api.getUserFromGithub(username)
 
@@ -59,7 +59,7 @@ const Profile = ({ match, history }) => {
     }
   }
 
-  async function getRepositories({ username }) {
+  async function getRepositories ({ username }) {
     try {
       const response = await api.getRepositoriesFromUser(username)
       const { data } = { ...response }
@@ -90,14 +90,14 @@ const Profile = ({ match, history }) => {
     }
   }
 
-  function handleSearch(event) {
+  function handleSearch (event) {
     event.preventDefault()
     const username = event.nativeEvent.target[0].value
     console.log('u', username)
     setUsername(username)
   }
 
-  function shouldRenderContent(userData = {}, repositoryData = []) {
+  function shouldRenderContent (userData = {}, repositoryData = []) {
     if (userData && repositoryData) {
       const {
         photoSrc,

@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 
-// import TemplateNotFound from '../../templates/not-found/not-found'
-import ErrorMessage from '../../organisms/error-message/error-message'
+import ErrorMessage from '../../molecules/notification-message/notification-message'
 
 function NotFound ({ history }) {
   function handleRedirect () {
@@ -14,7 +13,6 @@ function NotFound ({ history }) {
     >
       Something went wrong. Please try again.
     </ErrorMessage>
-    // <TemplateNotFound handleRedirect={handleRedirect} />
   )
 }
 
