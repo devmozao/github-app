@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import ErrorMessage from '../../molecules/notification-message/notification-message'
+import ErrorMessage from '../../containers/notification-message/notification-message'
 
 function NotFound ({ history }) {
   function handleRedirect () {
