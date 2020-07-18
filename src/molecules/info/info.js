@@ -2,8 +2,8 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
-import Icons from '../../atoms/icons'
-import Typography from '../../atoms/typography'
+import Icons from '../../components/icons'
+import Typography from '../../components/typography'
 
 const {
   Organization,

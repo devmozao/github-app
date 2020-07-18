@@ -2,8 +2,8 @@ import React, { memo } from 'react'
 
 import styled from 'styled-components'
 
-import Photo from '../../atoms/photo/photo'
-import Typography from '../../atoms/typography'
+import Photo from '../../components/photo/photo'
+import Typography from '../../components/typography'
 
 const StyledUser = styled.div`
 `

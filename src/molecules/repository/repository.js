@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 import colors from '../../utils/colors'
 
-import Icons from '../../atoms/icons'
-import Typography from '../../atoms/typography'
+import Icons from '../../components/icons'
+import Typography from '../../components/typography'
 
 const StyledRepository = styled.div`
   width: 750px;
