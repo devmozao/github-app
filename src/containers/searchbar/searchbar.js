@@ -9,51 +9,85 @@ import Icon from '../../components/icons'
 
 import colors from '../../utils/colors'
 
-const StyledLogo = styled.div`
+const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: space-around;
+  padding-top: 35px;
+  padding-bottom: 50px;
+`
+const Link = styled.a`
+  cursor: ${({ renderPointer }) => renderPointer ? 'pointer' : ''} ;
+`
+const AlignCenter = styled.div`
   text-align: center;
   user-select: none;
 `
 const StyledSpan = styled.span`
   padding: 1%;
 `
-const StyledSearch = styled.span`
+const StyledSearch = styled.form`
   display: flex;
   align-self: auto;
 `
 
-const SearchBar = ({ handleSearch }) => {
-  const Logo = () => {
-    const size = '65px'
-
+const SearchBar = ({ isCondensed = false, handleSearch, handleRedirectFunction }) => {
+  const renderLogo = ({ size = '' }) => {
     return (
-      <StyledLogo>
+      <AlignCenter>
         <Typography.Logo size={size}>Github</Typography.Logo>
         <StyledSpan />
         <Typography.Italic size={size}>Search</Typography.Italic>
-      </StyledLogo>
+      </AlignCenter>
     )
   }
+
+  const FullLogo = () => renderLogo({ size: '65px' })
+
+  const CondensedLogo = () => {
+    return (
+      <Link onClick={handleRedirectFunction} renderPointer={handleRedirectFunction}>
+        {renderLogo({ size: '40px' })}
+      </Link>
+    )
+  }
+
+  const Logo = () => isCondensed ? <CondensedLogo /> : <FullLogo />
 
   const Search = ({ handleSearchFunction }) => {
     return (
-      <form action='#' method='search' onSubmit={handleSearchFunction}>
-        <StyledSearch>
-          <Input.Search />
-          <Button.Default
-            bgColor={colors.button.default}
-            icon={Icon.Search}
-          />
-        </StyledSearch>
-      </form>
-
+      <StyledSearch action='#' method='search' onSubmit={handleSearchFunction}>
+        <Input.Search />
+        <Button.Default
+          bgColor={colors.button.default}
+          icon={Icon.Search}
+        />
+      </StyledSearch>
     )
   }
 
+  function Teste ({ shouldCondense }) {
+    if (shouldCondense) {
+      return (
+        <HeaderWrapper>
+
+          {/* <span style={{ paddingRight: '10px;' }}> */}
+          <Logo />
+          {/* </span> */}
+          <Search handleSearchFunction={handleSearch} />
+        </HeaderWrapper>
+      )
+    } else {
+      return (
+        <>
+          <Logo />
+          <Search handleSearchFunction={handleSearch} />
+        </>
+      )
+    }
+  }
+
   return (
-    <>
-      <Logo />
-      <Search handleSearchFunction={handleSearch} />
-    </>
+    <Teste shouldCondense={isCondensed} />
   )
 }
 
