@@ -1,18 +1,11 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import styled from 'styled-components'
-
-import ProfileSearchbar from '../../organisms/profile-searchbar/profile-searchbar'
-import ProfileInfo from '../../organisms/profile/profile'
-import Repositories from '../../organisms/repositories/repositories'
-import ErrorMessage from '../../molecules/notification-message/notification-message'
+import Header from '../../containers/searchbar/searchbar'
+import ProfileInfo from '../../containers/profile-info/profile-info'
+import Repositories from '../../containers/repositories/repositories'
+import NotificationMessage from '../../containers/notification-message/notification-message'
 
 import * as api from '../../services/api'
-
-const StyledProfileSearchBar = styled.header`
-  padding-top: 35px;
-  padding-bottom: 50px;
-`
 
 const Profile = ({ match, history }) => {
   const [username, setUsername] = useState(match.params.username)
@@ -97,6 +90,10 @@ const Profile = ({ match, history }) => {
     setUsername(username)
   }
 
+  function handleRedirect () {
+    history.push('/')
+  }
+
   function shouldRenderContent (userData = {}, repositoryData = []) {
     if (userData && repositoryData) {
       const {
@@ -129,18 +126,16 @@ const Profile = ({ match, history }) => {
       )
     } else {
       return (
-        <ErrorMessage showRedirect={false}>
+        <NotificationMessage showRedirect={false}>
           Something went wrong. :(
-        </ErrorMessage>
+        </NotificationMessage>
       )
     }
   }
 
   return (
     <>
-      <StyledProfileSearchBar>
-        <ProfileSearchbar history={history} handleSearch={handleSearch} />
-      </StyledProfileSearchBar>
+      <Header handleSearch={handleSearch} handleRedirectFunction={handleRedirect} isCondensed />
       {shouldRenderContent(userInfo, repositories)}
     </>
   )
